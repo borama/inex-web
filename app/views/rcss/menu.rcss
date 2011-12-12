@@ -83,7 +83,7 @@ img.menu_top_button_on {
 }
 
 #menu_right div.inner {
-	margin-top:28px;
+	margin-top:4px;
 }
 
 #menu_right div.inner div {
@@ -94,6 +94,15 @@ img.menu_top_button_on {
 	width:189px;
 	height:66px;
 	background-image: url('/images/layout/right_menu_search.png');
+}
+
+#menu_right_socials {
+	width:189px;
+	margin-left: 14px;
+}
+
+#menu_right_socials img {
+  margin-right: 16px;
 }
 
 #menu_right_search input {
