@@ -5,7 +5,7 @@ set :user, "inex"
 set :keep_releases, 2
 
 set :scm, "git"
-set :repository,  "git@bolen.onesim.net:inex-web.git"
+set :repository,  "git@github.com:borama/inex-web.git"
 
 set :use_sudo, false
 
@@ -24,6 +24,7 @@ namespace :deploy do
   desc "Symlink shared configs and folders on each release."
   task :symlink_shared do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/google_maps_access.rb #{release_path}/config/google_maps_access.rb"
     run "ln -nfs #{shared_path}/config/volant_access.rb #{release_path}/config/volant_access.rb"
     run "ln -nfs #{shared_path}/data #{release_path}/public/data"
   end
