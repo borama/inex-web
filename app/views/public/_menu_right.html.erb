@@ -23,6 +23,11 @@
   </div>
 
   <%= render_banners %>
+  <%- javascript_tag do %>
+    new SlideShow('banner_donor', { transitionDuration: 1.5, startHidden: false });
+    new SlideShow('banner_partner', { transitionDuration: 1.5, startHidden: false });
+    new SlideShow('banner_project', { transitionDuration: 1.5, startHidden: false });
+  <%- end %>
 
   <div>
     <% if par('partner_main_logo') %>
