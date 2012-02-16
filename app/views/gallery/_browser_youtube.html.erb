@@ -1,12 +1,12 @@
 <div style="float:left" id="gallery_browser_content">
 
-  <object width="<%=@sub_files[@index].video_width%>" height="<%=@sub_files[@index].video_height%>">
-    <param name="movie" value="http://www.youtube.com/v/<%=@sub_files[@index].link%>&hl=en&fs=1"></param>
-    <param name="allowFullScreen" value="true"></param>
-    <embed src="http://www.youtube.com/v/<%=@sub_files[@index].link%>&hl=en&fs=1" type="application/x-shockwave-flash" 
-          allowfullscreen="true" 
-          width="<%=@sub_files[@index].video_width%>" 
-          height="<%=@sub_files[@index].video_height%>"></embed>
+  <!--<object height="<%=@sub_files[@index].video_height%>" width="<%=@sub_files[@index].video_width%>"><param name="movie" value="http://www.youtube.com/v/DOKuSQIJlog?version=3&feature=player_detailpage"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/DOKuSQIJlog?version=3&feature=player_detailpage" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="360"></object>-->
+
+  <object style="height: 300px; width: 490px">
+    <param name="movie" value="http://www.youtube.com/v/<%=@sub_files[@index].link%>?version=3&feature=player_detailpage">
+    <param name="allowFullScreen" value="true">
+    <param name="allowScriptAccess" value="always">
+    <embed src="http://www.youtube.com/v/<%=@sub_files[@index].link%>?version=3&feature=player_detailpage" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="490" height="300">
   </object>
 
   <p id="gallery_browser_title">

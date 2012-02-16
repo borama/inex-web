@@ -26,8 +26,8 @@
     <td><%= f.text_area :description, :size => "15x4" %></td>
   </tr>
   <tr>
-    <td><%= f.label :type, "Media type" %></td>
-    <td><%= f.select :type, {"Image / photo"=>"MediaFileImage","YouTube video"=>"MediaFileYoutube","Local video"=>"MediaFileVideo"} %></td>
+    <td><%= f.label :type_helper, "Media type" %></td>
+    <td><%= f.select :type_helper, {"Image / photo"=>"MediaFileImage","YouTube video"=>"MediaFileYoutube","Local video"=>"MediaFileVideo"} %></td>
   </tr>
   <tr>
     <td><%= f.label :link, "Link" %></td>

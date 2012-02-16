@@ -9,7 +9,15 @@ class MediaFile < ActiveRecord::Base
   belongs_to :media_album
   
   acts_as_indexed :fields => [:title, :description]
-  
+
+  # solves the "cannot mass assign :type attribute problem - used in the view"
+  def type_helper
+    self.type
+  end
+  def type_helper=(type)
+    self.type = type
+  end
+
   def fulltext_formatter_name
     "format_media_file_for_fulltext"
   end
