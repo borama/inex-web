@@ -36,6 +36,7 @@
                 <%= javascript_include_tag @google_maps_info.script %>
         <% end %>
 
+        <%= render :partial => 'shared/google_analytics' %>
 </head>
 
 <body<%= " onload=\"#{@google_maps_info.loader}\" onunload=\"GUnload()\"" if @google_maps_info %>>
@@ -140,6 +141,5 @@
         </center>
 
 </div>
-<%= render :partial => 'shared/google_analytics' %>
 </body>
 </html>
