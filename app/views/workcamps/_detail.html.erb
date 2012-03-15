@@ -11,6 +11,7 @@
                         <%= detail_field 'wc_capacity', detail.capacity %>
                         <%= detail_field 'wc_minimal_age', detail.minimal_age %>
                         <%= detail_field 'wc_maximal_age', detail.maximal_age %>
+                        <%= detail_field 'wc_languages', "#{detail.language}"%>
                         <%= detail_field 'term', "#{detail.from} - #{detail.to}"%>
                         <%= detail_field_if 'wc_airport', detail.airport %>
                         <%= detail_field_if 'wc_airport', detail.region %>
