@@ -38,12 +38,17 @@ private
     require 'uri'
     
     begin
-      response = Net::HTTP.post_form(URI.parse('http://ec.europa.eu/youth/evs/aod/hei_list_from_query.cfm'),{'EIRef' => query_eiref})
+      http = Net::HTTP.new('ec.europa.eu')
+      response = http.post('/youth/evs/aod/hei_list_from_query.cfm', "EIRef=#{query_eiref}", user_agent)
       return {:flag => :bad_response} unless Net::HTTPSuccess === response
       return {:flag => :ok, :body => response.body}
     rescue 
       return {:flag => :exception}
     end
+  end
+
+  def user_agent
+    { 'User-Agent' => 'curl/7.21.0 (x86_64-pc-linux-gnu) libcurl/7.21.0 OpenSSL/0.9.8o zlib/1.2.3.4 libidn/1.18' }
   end
   
 end
