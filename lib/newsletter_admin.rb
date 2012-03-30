@@ -3,6 +3,7 @@ module NewsletterAdmin
   def self.subscribe(email)
     ActionMailer::Base.raise_delivery_errors = true
     ActionMailer::Base.logger = RAILS_DEFAULT_LOGGER
+    #ActionMailer::Base.logger.level = 0
     
     mail = TMail::Mail.new
     mail.subject = 'subscribe'
