@@ -10,6 +10,7 @@ module NewsletterAdmin
     mail.body = 'subscribe'
     mail.to = Parameter::get_value('newsletter_subscription_email')
     mail.set_content_type("text", "plain")
+    mail.from = email
     mail.sender = email
     mail.reply_to = email
     ActionMailer::Base.deliver(mail)
