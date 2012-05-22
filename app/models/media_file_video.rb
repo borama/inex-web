@@ -37,9 +37,11 @@ class MediaFileVideo < MediaFile
     thumb = Thumber::make_thumbnail(cover_image.absolute_filename, w, h)
     icon = Magick::Image.read(RAILS_ROOT + par("video_icon_filename")).first
     thumb.composite!(icon, Magick::CenterGravity, w*0.3, h*0.3,  Magick::ReplaceCompositeOp)
-    
+
+    previous_umask = File.umask(0002) # set group write perms
     File::makedirs(media_album.absolute_path(w, h))
     thumb.write(absolute_filename(w, h))
+    File.umask(previous_umask)
   end
   
 end

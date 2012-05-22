@@ -102,7 +102,9 @@ class MediaAlbum < ActiveRecord::Base
     else
       img = Thumber::make_thumbnail(RAILS_ROOT + par("folder_image_filename"), w, h)
     end
+    previous_umask = File.umask(0002) # set group write perms
     img.write(InexUtils::public_root + thumb_filename(w, h))
+    File.umask(previous_umask)
   end
   
   def files_for_user

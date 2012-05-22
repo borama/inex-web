@@ -1,7 +1,6 @@
 module MediaSynchronizer
 
   def self.synchronize_gallery(log,force)
-    previous_umask = File.umask(0002)
     if force
       MediaAlbum.delete_all
       MediaFile.delete_all
@@ -14,7 +13,6 @@ module MediaSynchronizer
     end
     link_videos_to_images(log)
     fix_positions
-    File.umask(previous_umask)
   end
   
   def self.fix_positions
