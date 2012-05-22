@@ -1,7 +1,7 @@
 module MediaSynchronizer
 
   def self.synchronize_gallery(log,force)
-    previous_umask = File.umask(0022)
+    previous_umask = File.umask(0002)
     if force
       MediaAlbum.delete_all
       MediaFile.delete_all
