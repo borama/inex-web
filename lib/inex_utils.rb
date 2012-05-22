@@ -75,7 +75,7 @@ module InexUtils
     unless File.exists? "#{InexUtils::public_root}#{thumbnail_filename}"
       thumb = Thumber::make_thumbnail(original_filename, w, h)
       previous_umask = File.umask(0002) # set group write perms
-      File.makedirs(File::dirname("#{InexUtils::public_root}#{thumbnail_filename}"))
+      InexFileUtils::makedirs_gw(File::dirname("#{InexUtils::public_root}#{thumbnail_filename}"))
       thumb.write("#{InexUtils::public_root}#{thumbnail_filename}")
       File.umask(previous_umask)
     end

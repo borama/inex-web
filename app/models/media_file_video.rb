@@ -39,7 +39,7 @@ class MediaFileVideo < MediaFile
     thumb.composite!(icon, Magick::CenterGravity, w*0.3, h*0.3,  Magick::ReplaceCompositeOp)
 
     previous_umask = File.umask(0002) # set group write perms
-    File::makedirs(media_album.absolute_path(w, h))
+    InexFileUtils::makedirs_gw(media_album.absolute_path(w, h))
     thumb.write(absolute_filename(w, h))
     File.umask(previous_umask)
   end
